@@ -17,6 +17,13 @@ import { CreateDesireComponent } from './main-page/create-buttons/create-desire/
 import { SingleDayRecordComponent } from './record-page/single-day-record/single-day-record.component';
 import { IndividualRecordComponent } from './record-page/single-day-record/individual-record/individual-record.component';
 import { ConfirmationComponent } from './record-page/confirmation/confirmation.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path:'list', component: MainPageComponent },
+  {path:'calendar', component: CalendarPageComponent},
+  {path:'record', component: RecordPageComponent},
+];
 
 @NgModule({
   declarations: [
@@ -38,9 +45,15 @@ import { ConfirmationComponent } from './record-page/confirmation/confirmation.c
     ConfirmationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+      RouterModule.forRoot(
+        appRoutes,
+        { enableTracing: true } // <-- debugging purposes only
+      )
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+}
