@@ -18,9 +18,10 @@ import { SingleDayRecordComponent } from './record-page/single-day-record/single
 import { IndividualRecordComponent } from './record-page/single-day-record/individual-record/individual-record.component';
 import { ConfirmationComponent } from './record-page/confirmation/confirmation.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AchievementService } from './service/achievement-service.service';
 
 const appRoutes: Routes = [
-  {path:'list', component: MainPageComponent },
+  {path:'**', component: MainPageComponent },
   {path:'calendar', component: CalendarPageComponent},
   {path:'record', component: RecordPageComponent},
 ];
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
         { enableTracing: true } // <-- debugging purposes only
       )
   ],
-  providers: [],
+  providers: [AchievementService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
