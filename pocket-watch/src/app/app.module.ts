@@ -20,10 +20,13 @@ import { ConfirmationComponent } from './record-page/confirmation/confirmation.c
 import { RouterModule, Routes } from '@angular/router';
 import { AchievementService } from './service/achievement-service.service';
 import { ProcessBarComponent } from './process-bar/process-bar.component';
+import { AchievementDetailComponent } from './achievement-detail/achievement-detail.component';
+import { DesireDetailComponent } from './desire-detail/desire-detail.component';
 
 const appRoutes: Routes = [
   {path:'calendar', component: CalendarPageComponent},
   {path:'record', component: RecordPageComponent},
+  {path:'adetail/:id', component: AchievementDetailComponent},
   {path:'**', component: MainPageComponent },
 ];
 
@@ -45,7 +48,9 @@ const appRoutes: Routes = [
     SingleDayRecordComponent,
     IndividualRecordComponent,
     ConfirmationComponent,
-    ProcessBarComponent
+    ProcessBarComponent,
+    AchievementDetailComponent,
+    DesireDetailComponent
   ],
   imports: [
     BrowserModule,

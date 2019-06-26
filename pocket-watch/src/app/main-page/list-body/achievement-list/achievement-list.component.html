@@ -1,7 +1,6 @@
 <h2>Achievement List</h2>
 <ul>
   <li *ngFor="let achievement of achievements">
-    {{achievement.id}}<br>
     <app-individual-achievement [id]="achievement.id"></app-individual-achievement>
   </li>
 </ul>

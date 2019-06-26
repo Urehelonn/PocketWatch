@@ -32,14 +32,6 @@ export class AchievementService {
       }
     }
     return null;
-    // this.achievements.forEach((achi)=>{
-    //   console.log("searching in achievements, currently at: "+achi.id);
-    //   if(achi.id===id){
-    //     console.log("found achi with id at: "+achi.id);
-    //     return achi;
-    //   }
-    // });
-    // return null;
   }
 
   deleteAchievement(){

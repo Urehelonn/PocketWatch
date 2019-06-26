@@ -17,5 +17,6 @@ export class IndividualAchievementComponent implements OnInit {
   ngOnInit() {
     this.achievement = this.achievementService.getAchievementById(this.id);
   }
+  
 
 }
