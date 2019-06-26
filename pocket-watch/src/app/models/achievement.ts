@@ -4,6 +4,7 @@ import { Tag } from './tag';
 import { Repeat } from './repeat';
 
 export class Achievement{
+    id: number;
     name: string;
     description: string | null;
     worth: number;
@@ -13,7 +14,8 @@ export class Achievement{
     alarm: Alarm | null;
     tag: Tag | null;
     
-    constructor(name, description, worth, time, date, alarm, tag){
+    constructor(id, name, description, worth, time, date, alarm, tag, repeat){
+        this.id=id;
         this.name = name;
         this.description = description;
         this.worth = worth;
@@ -21,6 +23,7 @@ export class Achievement{
         this.date = date;
         this.alarm = alarm;
         this.tag = tag;
+        this.repeat = repeat;
     }
 }
   

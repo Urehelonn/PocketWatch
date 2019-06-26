@@ -19,11 +19,12 @@ import { IndividualRecordComponent } from './record-page/single-day-record/indiv
 import { ConfirmationComponent } from './record-page/confirmation/confirmation.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AchievementService } from './service/achievement-service.service';
+import { ProcessBarComponent } from './process-bar/process-bar.component';
 
 const appRoutes: Routes = [
-  {path:'**', component: MainPageComponent },
   {path:'calendar', component: CalendarPageComponent},
   {path:'record', component: RecordPageComponent},
+  {path:'**', component: MainPageComponent },
 ];
 
 @NgModule({
@@ -43,13 +44,13 @@ const appRoutes: Routes = [
     CreateDesireComponent,
     SingleDayRecordComponent,
     IndividualRecordComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    ProcessBarComponent
   ],
   imports: [
     BrowserModule,
       RouterModule.forRoot(
-        appRoutes,
-        { enableTracing: true } // <-- debugging purposes only
+        appRoutes
       )
   ],
   providers: [AchievementService],

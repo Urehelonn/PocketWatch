@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Achievement } from 'src/app/models/achievement';
+import { AchievementService } from 'src/app/service/achievement-service.service';
 
 @Component({
   selector: 'app-individual-achievement',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndividualAchievementComponent implements OnInit {
 
-  constructor() { }
+  @Input() id: number;
+  achievement: Achievement;
+  
+  constructor(private achievementService: AchievementService) { }
 
   ngOnInit() {
+    this.achievement = this.achievementService.getAchievementById(this.id);
   }
 
 }
