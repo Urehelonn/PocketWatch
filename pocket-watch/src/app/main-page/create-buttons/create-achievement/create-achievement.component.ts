@@ -6,10 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-achievement.component.css']
 })
 export class CreateAchievementComponent implements OnInit {
-
-  constructor() { }
-
   ngOnInit() {
   }
-
 }

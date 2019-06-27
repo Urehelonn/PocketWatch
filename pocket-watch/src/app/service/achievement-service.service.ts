@@ -11,7 +11,7 @@ import { Observable, of } from 'rxjs';
 export class AchievementService {
   achievements: Achievement[] = [
     new Achievement(0,"go to sleep", "I need to go to sleep on time."
-    , 15, null, null, new Alarm(), new Tag(), new Repeat),
+    , 15, null, null, null, null, null),
     new Achievement(1,"coding", null
     , 5, null, null, new Alarm(), new Tag(), new Repeat),
     new Achievement(2,"housework", "There are lots of housework to do."
@@ -34,7 +34,35 @@ export class AchievementService {
     return null;
   }
 
-  deleteAchievement(){
-
+  deleteAchievement(id: number): boolean{
+    for(let i=0;i<this.achievements.length;i++){
+      if(this.achievements[i].id===id){
+        this.achievements.splice(i,1);
+        return true;
+      }
+    }
+    return false;
   }
+
+  addAchievement(achievement: Achievement){
+    // let achievement = new Achievement(9,"new Achievement", ""
+    // , 0, null, null, null, null, null);
+
+    this.achievements.push(achievement);
+
+    console.log("log from service: ");
+    console.log(this.achievements);
+  }
+
+  generateNewAchievementId(): number{
+    let used: number=0;
+    for(let i=0;i<this.achievements.length;i++){
+      if(this.achievements[i].id===used){
+        used++;
+      }
+    }
+    return used;
+  }
+
+  
 }

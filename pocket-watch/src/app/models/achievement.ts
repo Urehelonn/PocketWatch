@@ -10,7 +10,7 @@ export class Achievement{
     worth: number;
     time: Time | null;
     date: Date | null;
-    repeat: Repeat;
+    repeat: Repeat | null;
     alarm: Alarm | null;
     tag: Tag | null;
     

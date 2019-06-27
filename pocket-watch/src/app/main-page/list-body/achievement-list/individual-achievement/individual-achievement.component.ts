@@ -17,6 +17,11 @@ export class IndividualAchievementComponent implements OnInit {
   ngOnInit() {
     this.achievement = this.achievementService.getAchievementById(this.id);
   }
+
+  removeAchievement(){
+    console.log("removed "+this.id);
+    this.achievementService.deleteAchievement(this.id);
+  }
   
 
 }

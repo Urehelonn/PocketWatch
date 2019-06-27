@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,11 +23,13 @@ import { AchievementService } from './service/achievement-service.service';
 import { ProcessBarComponent } from './process-bar/process-bar.component';
 import { AchievementDetailComponent } from './achievement-detail/achievement-detail.component';
 import { DesireDetailComponent } from './desire-detail/desire-detail.component';
+import { CreateAchievementPageComponent } from './create-achievement-page/create-achievement-page.component';
 
 const appRoutes: Routes = [
   {path:'calendar', component: CalendarPageComponent},
   {path:'record', component: RecordPageComponent},
   {path:'adetail/:id', component: AchievementDetailComponent},
+  {path:'createa', component: CreateAchievementPageComponent},
   {path:'**', component: MainPageComponent },
 ];
 
@@ -50,9 +53,12 @@ const appRoutes: Routes = [
     ConfirmationComponent,
     ProcessBarComponent,
     AchievementDetailComponent,
-    DesireDetailComponent
+    DesireDetailComponent,
+    CreateAchievementPageComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
       RouterModule.forRoot(
         appRoutes

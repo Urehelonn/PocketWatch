@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Create Achievement</h1>
+  <form [formGroup]="achievementForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" value="New Achievement" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" formControlName="description">
+    </div>
+
+    <div class="form-group">
+      <label for="worth">Worth</label>
+      <input type="number" class="form-control" id="worth" value="0" formControlName="worth"
+        required>
+    </div>
+
+    <button type="submit" class="btn btn-success"
+    (click)="onSubmit()">Submit</button>
+  </form>
+</div>
