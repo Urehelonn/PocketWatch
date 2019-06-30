@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Achievement } from '../models/achievement';
 import { AchievementService } from '../service/achievement-service.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-achievement-page',
@@ -21,7 +22,7 @@ export class CreateAchievementPageComponent implements OnInit {
   // description: string;
   // worth: number;
 
-  constructor(private achievementService: AchievementService) { }
+  constructor(private achievementService: AchievementService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -38,5 +39,8 @@ export class CreateAchievementPageComponent implements OnInit {
     let achievement: Achievement = new Achievement(id, name,
       description, worth, null, null, null, null, null);
     this.achievementService.addAchievement(achievement);
+
+    //also navigate to the main list
+    this.router.navigate(['/']);
   }
 }
