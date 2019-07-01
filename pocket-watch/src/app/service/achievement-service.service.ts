@@ -4,6 +4,7 @@ import { Alarm } from '../models/alarm';
 import { Tag } from '../models/tag';
 import { Repeat } from '../models/repeat';
 import { Observable, of } from 'rxjs';
+import { CurrencyService } from './currency-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class AchievementService {
     new Achievement(3,"pick up clothes around the floor", null
     , 5, null, null, new Alarm(), new Tag(), new Repeat)
   ];
-  constructor() { }
+
+  constructor(private currencyService: CurrencyService) { }
 
   getAchievements(): Observable<Achievement[]>{
     return of(this.achievements);
@@ -64,5 +66,8 @@ export class AchievementService {
     return used;
   }
 
+  getBalance(){
+
+  }
   
 }

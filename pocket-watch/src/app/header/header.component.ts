@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AchievementService } from '../service/achievement-service.service';
+import { CurrencyService } from '../service/currency-service.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  balance: number;
+
+  constructor(private currencyService: CurrencyService) { }
 
   ngOnInit() {
+    this.balance=this.currencyService.getCurrency();
   }
 
 }
