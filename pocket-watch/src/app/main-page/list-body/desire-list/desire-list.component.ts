@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Desire } from 'src/app/models/desire';
+import { DesireService } from 'src/app/service/desire-service.service';
 
 @Component({
   selector: 'app-desire-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesireListComponent implements OnInit {
 
-  constructor() { }
+  desires: Desire[];
+  constructor(private disireService: DesireService) { }
 
   ngOnInit() {
+    this.disireService.getDesires()
+    .subscribe(desires=>this.desires=desires); 
   }
 
 }

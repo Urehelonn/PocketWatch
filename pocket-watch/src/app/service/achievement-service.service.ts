@@ -65,9 +65,5 @@ export class AchievementService {
     }
     return used;
   }
-
-  getBalance(){
-
-  }
   
 }
