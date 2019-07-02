@@ -26,12 +26,15 @@ import { DesireDetailComponent } from './desire-detail/desire-detail.component';
 import { CreateAchievementPageComponent } from './create-achievement-page/create-achievement-page.component';
 import { CurrencyService } from './service/currency-service.service';
 import { DesireService } from './service/desire-service.service';
+import { CreateDesirePageComponent } from './create-desire-page/create-desire-page.component';
 
 const appRoutes: Routes = [
   { path: 'calendar', component: CalendarPageComponent },
   { path: 'record', component: RecordPageComponent },
   { path: 'adetail/:id', component: AchievementDetailComponent },
+  { path: 'ddetail/:id', component: DesireDetailComponent },
   { path: 'createa', component: CreateAchievementPageComponent },
+  { path: 'created', component: CreateDesirePageComponent },
   { path: '**', component: MainPageComponent },
 ];
 
@@ -56,7 +59,8 @@ const appRoutes: Routes = [
     ProcessBarComponent,
     AchievementDetailComponent,
     DesireDetailComponent,
-    CreateAchievementPageComponent
+    CreateAchievementPageComponent,
+    CreateDesirePageComponent
   ],
   imports: [
     FormsModule,

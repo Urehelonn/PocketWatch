@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CurrencyService } from './currency-service.service';
 import { Desire } from '../models/desire';
 import { Observable, of } from 'rxjs';
+import { Tag } from '../models/tag';
 
 @Injectable({
     providedIn: 'root'
@@ -9,11 +10,11 @@ import { Observable, of } from 'rxjs';
 export class DesireService {
     // constructor(id, name, description, worth, time, date, alarm, tag, repeat)
     desires: Desire[] = [
-        new Desire(0, "watch a horror movie", "i wanna watch a horror movie", 15, null, null, null, null, null),
+        new Desire(0, "watch a horror movie", "i wanna watch a horror movie", 15, null, null, null, new Tag(), null),
         new Desire(2, "play LOL", "wanna play vn", 5, null, null, null, null, null),
-        new Desire(1, "get a new skin on sale", "if there are any good skin on sale", 45, null, null, null, null, null),
-        new Desire(3, "read novels", "", 15, null, null, null, null, null),
-        new Desire(7, "eat candy", "", 1, null, null, null, null, null),
+        new Desire(1, "get a new skin on sale", "if there are any good skin on sale", 45, null, null, null, new Tag(), null),
+        new Desire(3, "read novels", "", 15, null, null, null, new Tag(), null),
+        new Desire(7, "eat candy", "", 1, null, null, null, new Tag(), null),
     ];
 
     constructor(private currencyService: CurrencyService) { }

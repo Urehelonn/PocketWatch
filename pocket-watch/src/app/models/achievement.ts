@@ -12,7 +12,7 @@ export class Achievement{
     date: Date | null;
     repeat: Repeat | null;
     alarm: Alarm | null;
-    tag: Tag | null;
+    tag: Tag;
     
     constructor(id, name, description, worth, time, date, alarm, tag, repeat){
         this.id=id;
