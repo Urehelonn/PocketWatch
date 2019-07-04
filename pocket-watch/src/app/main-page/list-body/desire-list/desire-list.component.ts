@@ -16,5 +16,4 @@ export class DesireListComponent implements OnInit {
     this.disireService.getDesires()
     .subscribe(desires=>this.desires=desires); 
   }
-
 }
