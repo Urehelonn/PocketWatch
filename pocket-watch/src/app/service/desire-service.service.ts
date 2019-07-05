@@ -29,7 +29,7 @@ export class DesireService {
             this.desireIds.push(this.desires[i].id);
         }
         this.sortIds(0, this.desireIds.length-1); //helper method quicksort id collection
-        console.log(this.desireIds.toString());
+        // console.log(this.desireIds.toString());
     }
     private sortIds(l: number, h: number){
         if(l<h){
@@ -61,15 +61,15 @@ export class DesireService {
             if(this.desireIds[i]>id){
                 this.desireIds.splice(i,0,id);
                 end=true;
-                console.log("id added");
+                // console.log("id added");
                 break;
             }
         }
         if(!end){
             this.desireIds.push(id);
-            console.log("id added");
+            // console.log("id added");
         }
-        console.log("new ids: "+this.desireIds.toString());
+        // console.log("new ids: "+this.desireIds.toString());
     }
 
     getDesires(): Observable<Desire[]> {
@@ -107,11 +107,11 @@ export class DesireService {
                 break;
             }
             if (this.desireIds[i] == used) {
-                console.log(this.desireIds[i] +" id: "+used);
+                // console.log(this.desireIds[i] +" id: "+used);
                 used++;
             }
         }
-        console.log("new id: "+used);
+        // console.log("new id: "+used);
         //add new id to the desireId collection
         this.addNewId(used);
         return used;
