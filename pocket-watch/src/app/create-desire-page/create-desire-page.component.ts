@@ -26,7 +26,6 @@ export class CreateDesirePageComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.desireForm);
 
     let name = (this.desireForm.value.name === "") ? "New Desire" : this.desireForm.value.name;
     let id: number = this.desireService.generateNewDesireId();
