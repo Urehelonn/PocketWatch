@@ -22,6 +22,11 @@ export class IndividualAchievementComponent implements OnInit {
     console.log("removed "+this.id);
     this.achievementService.deleteAchievement(this.id);
   }
+
+  finishAchievement(){
+    console.log("attempting finish achievemnt: "+this.id);
+    this.achievementService.finishAchievement(this.id);
+  }
   
 
 }

@@ -5,6 +5,7 @@ import { Tag } from '../models/tag';
 import { Repeat } from '../models/repeat';
 import { Observable, of } from 'rxjs';
 import { CurrencyService } from './currency-service.service';
+import { RecordService } from './record-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +21,9 @@ export class AchievementService {
     new Achievement(3, "pick up clothes around the floor", null
       , 5, null, null, new Alarm(), new Tag(), new Repeat)
   ];
-  private achievementIds: number[]=[];
+  private achievementIds: number[] = [];
 
-  constructor(private currencyService: CurrencyService) { 
+  constructor(private currencyService: CurrencyService, private recordService: RecordService) {
     this.initDesireIds();
   }
 
@@ -101,19 +102,32 @@ export class AchievementService {
     this.achievements.push(achievement);
     // console.log(this.achievements);
   }
+
   generateNewAchievementId(): number {
     console.log("generate desire id called: ");
     let used: number = 0;
     for (let i = 0; i < this.achievementIds.length; i++) {
-        if(used<this.achievementIds[i]){
-            break;
-        }
-        if (this.achievementIds[i] == used) {
-            used++;
-        }
+      if (used < this.achievementIds[i]) {
+        break;
+      }
+      if (this.achievementIds[i] == used) {
+        used++;
+      }
     }
     //add new id to the desireId collection
     this.addNewId(used);
     return used;
-}
+  }
+
+  finishAchievement(id: number){
+    //find achievement by id
+    let achievement: Achievement= this.getAchievementById(id);
+    //add achievement worth to balance
+    this.currencyService.addCurrency(achievement.worth);
+    console.log(this.currencyService.getCurrency());
+    //add achievement to record
+    this.recordService.addAchievementToRecord(achievement);
+    //remove achievement from achievement list
+    this.deleteAchievement(id);
+  }
 }

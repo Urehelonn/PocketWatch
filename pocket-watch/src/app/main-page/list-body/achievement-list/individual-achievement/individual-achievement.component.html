@@ -1,3 +1,4 @@
 <a class="container" [routerLink]="['/adetail', id]">{{achievement.name}}</a>
 <span>{{achievement.worth}}</span>
+<button class="btn btn-success" (click)="finishAchievement()">Finish</button>
 <button class="btn btn-danger" (click)="removeAchievement()">Delete</button>

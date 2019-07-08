@@ -27,6 +27,7 @@ import { CreateAchievementPageComponent } from './create-achievement-page/create
 import { CurrencyService } from './service/currency-service.service';
 import { DesireService } from './service/desire-service.service';
 import { CreateDesirePageComponent } from './create-desire-page/create-desire-page.component';
+import { RecordService } from './service/record-service.service';
 
 const appRoutes: Routes = [
   { path: 'calendar', component: CalendarPageComponent },
@@ -60,7 +61,7 @@ const appRoutes: Routes = [
     AchievementDetailComponent,
     DesireDetailComponent,
     CreateAchievementPageComponent,
-    CreateDesirePageComponent
+    CreateDesirePageComponent,
   ],
   imports: [
     FormsModule,
@@ -72,7 +73,8 @@ const appRoutes: Routes = [
   ],
   providers: [AchievementService,
     CurrencyService,
-    DesireService],
+    DesireService,
+    RecordService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
