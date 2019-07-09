@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AchievementService } from '../service/achievement-service.service';
 import { CurrencyService } from '../service/currency-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +10,24 @@ import { CurrencyService } from '../service/currency-service.service';
 export class HeaderComponent implements OnInit {
 
   balance: number;
+  private subscription: Subscription;
 
   constructor(private currencyService: CurrencyService) { }
 
   ngOnInit() {
-    this.balance=this.currencyService.getCurrency();
+    this.subscription = this.currencyService.getCurrency()
+      .subscribe(balance => {
+        if (balance) {
+          console.log("currency changed from: " + this.balance + " to " + balance);
+          this.balance = balance;
+        }
+        else {
+          console.log("fk");
+        }
+      });
   }
 
+  showBalance() {
+    console.log(this.balance);
+  }
 }

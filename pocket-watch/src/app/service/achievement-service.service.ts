@@ -33,7 +33,7 @@ export class AchievementService {
       this.achievementIds.push(this.achievements[i].id);
     }
     this.sortIds(0, this.achievementIds.length - 1); //helper method quicksort id collection
-    console.log(this.achievementIds.toString());
+    // console.log(this.achievementIds.toString());
   }
   private sortIds(l: number, h: number) {
     if (l < h) {
@@ -75,6 +75,7 @@ export class AchievementService {
     }
     console.log("new ids: " + this.achievementIds.toString());
   }
+  
   getAchievements(): Observable<Achievement[]> {
     return of(this.achievements);
   }
@@ -124,7 +125,7 @@ export class AchievementService {
     let achievement: Achievement= this.getAchievementById(id);
     //add achievement worth to balance
     this.currencyService.addCurrency(achievement.worth);
-    console.log(this.currencyService.getCurrency());
+    // console.log(this.currencyService.currency);
     //add achievement to record
     this.recordService.addAchievementToRecord(achievement);
     //remove achievement from achievement list

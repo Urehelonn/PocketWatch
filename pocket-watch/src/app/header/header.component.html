@@ -18,5 +18,7 @@
       </li>
     </ul>
   </div>
-  <span class="navbar-text text-truncate w-50 text-right order-1 order-md-last text-color-beige">$ {{balance}}</span>
+  <span class="navbar-text text-truncate w-50 text-right order-1 order-md-last text-color-beige"
+  (click)="showBalance()"
+  >$ {{balance}}</span>
 </nav>

@@ -7,6 +7,7 @@ import { Tag } from '../models/tag';
 @Injectable({
     providedIn: 'root'
 })
+
 export class DesireService {
     // constructor(id, name, description, worth, time, date, alarm, tag, repeat)
     private desires: Desire[] = [
